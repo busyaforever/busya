@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BUSYA — Forever Loved</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+        img.banner {
+            width: 100%%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        a.button:hover {
+            background: #005fa3;
+        }
+    
+        .lang-switch {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            background: #ffffff1a;
+            color: #fff;
+            border: 1px solid #ffffff33;
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+        }
+        @media (prefers-color-scheme: light) {
+            .lang-switch { color:#111; border-color:#00000022; background:#ffffffcc; }
+        }
+    </style>
+</head>
+<body>
+    
+  <header>
+        <h1 id="title">$BUSYA — Forever Loved</h1>
+        <p id="subtitle">NFT, Token & Charity for Animal Shelters</p>
+        <button id="langSwitch" class="lang-switch" onclick="switchLang()">RU / EN</button>
+  </header>
+
+
+    <img src="assets/busya_banner.png" alt="BUSYA Forever Loved" class="banner">
+
+    <div>
+        <a href="https://exchange.art/editions/A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv" class="button" id="btnMarketplace">NFT Marketplace</a>
+        <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7sGdMbDioDYfTaqWyrSPktFva76MoGE4HpRdsyphETD7" class="button" id="btnTrade">Trade on Raydium</a>
+        <a href="https://x.com/BusyaForever" class="button" id="btnTwitter">Twitter</a>
+        <a href="https://t.me/BusyaForeverLoved" class="button" id="btnTelegram">Telegram</a>
+    </div>
+
+<script>
+  const dict = {
+    en: {
+      title: "$BUSYA — Forever Loved",
+      subtitle: "NFT, Token & Charity for Animal Shelters",
+      btnMarketplace: "NFT Marketplace",
+      btnTrade: "Trade on Raydium",
+      btnTwitter: "Twitter",
+      btnTelegram: "Telegram"
+    },
+    ru: {
+      title: "$BUSYA — Навсегда Любимая",
+      subtitle: "NFT, токен и поддержка приютов для животных",
+      btnMarketplace: "NFT маркетплейс",
+      btnTrade: "Торговать на Raydium",
+      btnTwitter: "X (Twitter)",
+      btnTelegram: "Telegram"
+    }
+  };
+  let current = "en";
+  function switchLang(){
+    current = current === "en" ? "ru" : "en";
+    const t = dict[current];
+    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+    set("title", t.title);
+    set("subtitle", t.subtitle);
+    set("btnMarketplace", t.btnMarketplace);
+    set("btnTrade", t.btnTrade);
+    set("btnTwitter", t.btnTwitter);
+    set("btnTelegram", t.btnTelegram);
+  }
+</script>
+
+</body>
+</html>
