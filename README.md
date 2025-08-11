@@ -7,3 +7,4 @@
 - Socials: [Twitter](https://x.com/BusyaForever) / [Telegram](https://t.me/BusyaForeverLoved)
 
 Deploy: GitHub Pages → Settings → Pages → Deploy from a branch → main / root.
+
