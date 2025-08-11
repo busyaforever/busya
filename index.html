@@ -1,112 +1,111 @@
+
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$BUSYA — NFT & Token</title>
-  <meta name="description" content="$BUSYA — memecoin & 1/1 NFT. Part of profits go to animal shelters.">
-  <style>
-    :root { --primary:#ff8c42; --accent:#ffce54; --bg:#faf7f3; --ink:#333; }
-    * { box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; margin:0; background:var(--bg); color:var(--ink); }
-    header { background: linear-gradient(135deg, var(--accent), var(--primary)); color:#fff; padding:36px 16px; text-align:center; }
-    header h1 { margin:0 0 6px; }
-    .lang { background:#fff; color:#222; border:1px solid #ddd; padding:6px 10px; border-radius:8px; cursor:pointer; margin-left:8px; }
-    main { max-width: 1000px; margin: 20px auto; padding: 0 16px; display:grid; gap:20px; }
-    .card { background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 20px rgba(0,0,0,0.06); }
-    .row { display:grid; gap:16px; }
-    @media (min-width: 900px) { .row { grid-template-columns: 1.2fr 1fr; } }
-    img.hero { width:100%; border-radius:12px; }
-    .muted { color:#666; font-size:0.92rem; }
-    .pill { background:#f1ede7; padding:8px 10px; border-radius:10px; margin:4px 0; word-break:break-all; }
-    a.btn { display:inline-block; background:var(--primary); color:#fff; text-decoration:none; padding:10px 14px; border-radius:10px; margin-top:10px; }
-    a.btn.alt { background:#4a5568; }
-    a.btn:hover { filter:brightness(0.95); }
-    .btn-row a.btn { margin-right:8px; }
-    footer { text-align:center; padding:20px; color:#666; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BUSYA — Forever Loved</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+        img.banner {
+            width: 100%%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        a.button:hover {
+            background: #005fa3;
+        }
+    
+        .lang-switch {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            background: #ffffff1a;
+            color: #fff;
+            border: 1px solid #ffffff33;
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+        }
+        @media (prefers-color-scheme: light) {
+            .lang-switch { color:#111; border-color:#00000022; background:#ffffffcc; }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1 id="title">$BUSYA — Memecoin & 1/1 NFT</h1>
-  <p id="subtitle">In memory of Busya. A share to animal shelters.</p>
-  <button class="lang" onclick="switchLang()">RU/EN</button>
-</header>
+    
+  <header>
+        <h1 id="title">$BUSYA — Forever Loved</h1>
+        <p id="subtitle">NFT, Token & Charity for Animal Shelters</p>
+        <button id="langSwitch" class="lang-switch" onclick="switchLang()">RU / EN</button>
+  </header>
 
-<main>
-  <section class="row">
-    <div class="card">
-      <img class="hero" src="assets/busya_nft.jpg" alt="BUSYA NFT">
-      <div class="pill"><b id="mintLabel">Mint:</b> <span id="mintValue">A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv</span></div>
-      <div class="btn-row">
-        <a class="btn" id="viewMarket" href="https://exchange.art/editions/A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv" target="_blank" rel="noopener">View on Marketplace</a>
-      </div>
+
+    <img src="assets/busya_banner.png" alt="BUSYA Forever Loved" class="banner">
+
+    <div>
+        <a href="https://exchange.art/editions/A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv" class="button" id="btnMarketplace">NFT Marketplace</a>
+        <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7sGdMbDioDYfTaqWyrSPktFva76MoGE4HpRdsyphETD7" class="button" id="btnTrade">Trade on Raydium</a>
+        <a href="https://x.com/BusyaForever" class="button" id="btnTwitter">Twitter</a>
+        <a href="https://t.me/BusyaForeverLoved" class="button" id="btnTelegram">Telegram</a>
     </div>
-    <div class="card">
-      <h2 id="tokenTitle">$BUSYA Token</h2>
-      <p class="muted" id="tokenText">Community memecoin on Solana. Part of proceeds support animal shelters.</p>
-      <div class="btn-row">
-        <a class="btn" id="tradeBtn" href="https://t.co/g1JjTRvOcm" target="_blank" rel="noopener">Trade (Birdeye)</a>
-    <a class="btn" href="https://raydium.io/swap/?inputMint=sol&outputMint=7sGdMbDioDYfTaqWyrSPktFva76MoGE4HpRdsyphETD7" target="_blank" rel="noopener">Trade on Raydium</a>
-        <a class="btn alt" id="twitterBtn" href="https://x.com/BusyaForever" target="_blank" rel="noopener">Official X</a>
-        <a class="btn alt" id="tgBtn" href="https://t.me/BusyaForeverLoved" target="_blank" rel="noopener">Telegram</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2 id="missionTitle">Mission</h2>
-    <p id="missionText">We unite the crypto community around kindness. NFT + token purchases help animals in shelters. Reports are published in our socials.</p>
-  </section>
-</main>
-
-<footer>© 2025 $BUSYA — BUSYA Forever</footer>
 
 <script>
-const lang = {
-  en: {
-    title: "$BUSYA — Memecoin & 1/1 NFT",
-    subtitle: "In memory of Busya. A share to animal shelters.",
-    mintLabel: "Mint:",
-    viewMarket: "View on Marketplace",
-    tokenTitle: "$BUSYA Token",
-    tokenText: "Community memecoin on Solana. Part of proceeds support animal shelters.",
-    tradeBtn: "Trade (Birdeye)",
-    twitterBtn: "Official X",
-    tgBtn: "Telegram",
-    missionTitle: "Mission",
-    missionText: "We unite the crypto community around kindness. NFT + token purchases help animals in shelters. Reports are published in our socials."
-  },
-  ru: {
-    title: "$BUSYA — Мемкоин и NFT 1/1",
-    subtitle: "В память о Бусе. Часть прибыли — приютам.",
-    mintLabel: "Mint:",
-    viewMarket: "Открыть на маркетплейсе",
-    tokenTitle: "Токен $BUSYA",
-    tokenText: "Комьюнити‑мемкоин на Solana. Часть дохода направляется в приюты для животных.",
-    tradeBtn: "Торговать (Birdeye)",
-    twitterBtn: "Официальный X",
-    tgBtn: "Telegram",
-    missionTitle: "Миссия",
-    missionText: "Мы объединяем криптосообщество вокруг добра. Покупки NFT и токена помогают приютам. Отчёты публикуем в соцсетях."
+  const dict = {
+    en: {
+      title: "$BUSYA — Forever Loved",
+      subtitle: "NFT, Token & Charity for Animal Shelters",
+      btnMarketplace: "NFT Marketplace",
+      btnTrade: "Trade on Raydium",
+      btnTwitter: "Twitter",
+      btnTelegram: "Telegram"
+    },
+    ru: {
+      title: "$BUSYA — Навсегда Любимая",
+      subtitle: "NFT, токен и поддержка приютов для животных",
+      btnMarketplace: "NFT маркетплейс",
+      btnTrade: "Торговать на Raydium",
+      btnTwitter: "X (Twitter)",
+      btnTelegram: "Telegram"
+    }
+  };
+  let current = "en";
+  function switchLang(){
+    current = current === "en" ? "ru" : "en";
+    const t = dict[current];
+    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+    set("title", t.title);
+    set("subtitle", t.subtitle);
+    set("btnMarketplace", t.btnMarketplace);
+    set("btnTrade", t.btnTrade);
+    set("btnTwitter", t.btnTwitter);
+    set("btnTelegram", t.btnTelegram);
   }
-};
-let cur = "en";
-function switchLang(){
-  cur = cur === "en" ? "ru" : "en";
-  const t = lang[cur];
-  document.getElementById("title").innerText = t.title;
-  document.getElementById("subtitle").innerText = t.subtitle;
-  document.getElementById("mintLabel").innerText = t.mintLabel;
-  document.getElementById("viewMarket").innerText = t.viewMarket;
-  document.getElementById("tokenTitle").innerText = t.tokenTitle;
-  document.getElementById("tokenText").innerText = t.tokenText;
-  document.getElementById("tradeBtn").innerText = t.tradeBtn;
-  document.getElementById("twitterBtn").innerText = t.twitterBtn;
-  document.getElementById("tgBtn").innerText = t.tgBtn;
-  document.getElementById("missionTitle").innerText = t.missionTitle;
-  document.getElementById("missionText").innerText = t.missionText;
-}
 </script>
+
 </body>
 </html>
