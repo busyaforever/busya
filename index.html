@@ -1,114 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BUSYA — Forever Loved</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-        }
-        img.banner {
-            width: 100%%;
-            max-width: 800px;
-            height: auto;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
-        a.button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background: #0077cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-        a.button:hover {
-            background: #005fa3;
-        }
-    
-        .lang-switch {
-            position: fixed;
-            top: 14px;
-            right: 14px;
-            background: #ffffff1a;
-            color: #fff;
-            border: 1px solid #ffffff33;
-            border-radius: 10px;
-            padding: 8px 12px;
-            cursor: pointer;
-            backdrop-filter: blur(6px);
-            z-index: 9999;
-        }
-        @media (prefers-color-scheme: light) {
-            .lang-switch { color:#111; border-color:#00000022; background:#ffffffcc; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$BUSYA — Forever Loved</title>
+  <style>
+    :root { --bg:#f9f9f9; --ink:#111; --brand:#0077cc; --brand-hover:#005fa3; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--bg);
+      -webkit-text-size-adjust: 100%;
+      text-align: center;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 16px 14px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: clamp(20px, 3.8vw, 28px); }
+    header p  { margin: 0; opacity: .9; font-size: clamp(13px, 3.4vw, 16px); }
+
+    img.banner {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin: 14px auto 0;
+      border-radius: 12px;
+    }
+
+    .buttons {
+      margin: 14px auto 24px;
+      padding: 0 14px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr; /* на мобильном — одна колонка */
+      max-width: 640px;
+    }
+    @media (min-width: 560px) {
+      .buttons { grid-template-columns: 1fr 1fr; } /* на планшете — две */
+    }
+
+    a.button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      line-height: 1.2;
+      touch-action: manipulation;
+    }
+    a.button:hover { background: var(--brand-hover); }
+
+    .lang-switch {
+      position: fixed;
+      top: 10px; right: 10px;
+      background: #ffffffcc;
+      color: #111;
+      border: 1px solid #00000022;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      font-size: 14px;
+    }
+    @media (min-width: 768px) {
+      .lang-switch { top: 14px; right: 14px; font-size: 15px; }
+    }
+  </style>
 </head>
 <body>
-    
+
   <header>
-        <h1 id="title">$BUSYA — Forever Loved</h1>
-        <p id="subtitle">NFT, Token & Charity for Animal Shelters</p>
-        <button id="langSwitch" class="lang-switch" onclick="switchLang()">RU / EN</button>
+    <h1 id="title">$BUSYA — Forever Loved</h1>
+    <p id="subtitle">NFT, Token & Charity for Animal Shelters</p>
+    <button id="langSwitch" class="lang-switch" onclick="switchLang()">RU / EN</button>
   </header>
 
+  <!-- Безопасная подстановка баннера: сначала ищем в корне, если 404 — берём из assets/ -->
+  <img
+    src="busya_banner.png?v=12"
+    onerror="this.onerror=null; this.src='assets/busya_banner.png?v=12'"
+    alt="BUSYA Forever Loved"
+    class="banner">
 
-    <img src="busya_banner.png?v=10" alt="BUSYA Forever Loved" class="banner">
+  <div class="buttons">
+    <a href="https://exchange.art/editions/A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv" class="button" id="btnMarketplace">NFT Marketplace</a>
+    <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7sGdMbDioDYfTaqWyrSPktFva76MoGE4HpRdsyphETD7" class="button" id="btnTrade">Trade on Raydium</a>
+    <a href="https://x.com/BusyaForever" class="button" id="btnTwitter">Twitter</a>
+    <a href="https://t.me/BusyaForeverLoved" class="button" id="btnTelegram">Telegram</a>
+  </div>
 
-    <div>
-        <a href="https://exchange.art/editions/A9pb2CXBZ3yrARsmKagaSzZa6tq7A85s2hq3kkycuLhv" class="button" id="btnMarketplace">NFT Marketplace</a>
-        <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7sGdMbDioDYfTaqWyrSPktFva76MoGE4HpRdsyphETD7" class="button" id="btnTrade">Trade on Raydium</a>
-        <a href="https://x.com/BusyaForever" class="button" id="btnTwitter">Twitter</a>
-        <a href="https://t.me/BusyaForeverLoved" class="button" id="btnTelegram">Telegram</a>
-    </div>
-
-<script>
-  const dict = {
-    en: {
-      title: "$BUSYA — Forever Loved",
-      subtitle: "NFT, Token & Charity for Animal Shelters",
-      btnMarketplace: "NFT Marketplace",
-      btnTrade: "Trade on Raydium",
-      btnTwitter: "Twitter",
-      btnTelegram: "Telegram"
-    },
-    ru: {
-      title: "$BUSYA — Навсегда Любимая",
-      subtitle: "NFT, токен и поддержка приютов для животных",
-      btnMarketplace: "NFT маркетплейс",
-      btnTrade: "Торговать на Raydium",
-      btnTwitter: "X (Twitter)",
-      btnTelegram: "Telegram"
+  <script>
+    const dict = {
+      en: {
+        title: "$BUSYA — Forever Loved",
+        subtitle: "NFT, Token & Charity for Animal Shelters",
+        btnMarketplace: "NFT Marketplace",
+        btnTrade: "Trade on Raydium",
+        btnTwitter: "Twitter",
+        btnTelegram: "Telegram"
+      },
+      ru: {
+        title: "$BUSYA — Навсегда Любимая",
+        subtitle: "NFT, токен и поддержка приютов для животных",
+        btnMarketplace: "NFT маркетплейс",
+        btnTrade: "Торговать на Raydium",
+        btnTwitter: "X (Twitter)",
+        btnTelegram: "Telegram"
+      }
+    };
+    let current = "en";
+    function switchLang() {
+      current = current === "en" ? "ru" : "en";
+      const t = dict[current];
+      const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+      set("title", t.title);
+      set("subtitle", t.subtitle);
+      set("btnMarketplace", t.btnMarketplace);
+      set("btnTrade", t.btnTrade);
+      set("btnTwitter", t.btnTwitter);
+      set("btnTelegram", t.btnTelegram);
     }
-  };
-  let current = "en";
-  function switchLang(){
-    current = current === "en" ? "ru" : "en";
-    const t = dict[current];
-    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
-    set("title", t.title);
-    set("subtitle", t.subtitle);
-    set("btnMarketplace", t.btnMarketplace);
-    set("btnTrade", t.btnTrade);
-    set("btnTwitter", t.btnTwitter);
-    set("btnTelegram", t.btnTelegram);
-  }
-</script>
-
+  </script>
 </body>
 </html>
-
-
-
