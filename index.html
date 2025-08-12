@@ -28,7 +28,7 @@
       display: block;
       width: 100%;
       height: auto;
-      max-width: 100%;
+      max-width: 900px; /* ограничение ширины на ПК */
       margin: 14px auto 0;
       border-radius: 12px;
     }
@@ -38,11 +38,11 @@
       padding: 0 14px;
       display: grid;
       gap: 10px;
-      grid-template-columns: 1fr; /* на мобильном — одна колонка */
+      grid-template-columns: 1fr;
       max-width: 640px;
     }
     @media (min-width: 560px) {
-      .buttons { grid-template-columns: 1fr 1fr; } /* на планшете — две */
+      .buttons { grid-template-columns: 1fr 1fr; }
     }
 
     a.button {
@@ -86,10 +86,9 @@
     <button id="langSwitch" class="lang-switch" onclick="switchLang()">RU / EN</button>
   </header>
 
-  <!-- Безопасная подстановка баннера: сначала ищем в корне, если 404 — берём из assets/ -->
   <img
-    src="busya_banner.png?v=12"
-    onerror="this.onerror=null; this.src='assets/busya_banner.png?v=12'"
+    src="busya_banner.png?v=13"
+    onerror="this.onerror=null; this.src='assets/busya_banner.png?v=13'"
     alt="BUSYA Forever Loved"
     class="banner">
 
